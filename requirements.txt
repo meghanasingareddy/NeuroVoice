@@ -1,0 +1,5 @@
+Flask
+gTTS
+tensorflow
+mne
+numpy

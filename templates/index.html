@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroVoice</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>NeuroVoice</h1>
+        <p>Upload an EEG file (.cnt) to predict text and generate voice.</p>
+        
+        <div class="upload-section">
+            <input type="file" id="eeg-file-input" accept=".cnt">
+            <label for="eeg-file-input" class="file-label">Choose File</label>
+            <button id="predict-btn">Predict</button>
+        </div>
+        
+        <div id="loading" class="hidden">
+            <div class="spinner"></div>
+        </div>
+        
+        <div id="result-section" class="hidden">
+            <h2>Predicted Sentence</h2>
+            <p id="predicted-text"></p>
+            
+            <h2>Generated Voice</h2>
+            <audio id="audio-player" controls></audio>
+        </div>
+        
+        <div id="error-section" class="hidden">
+            <h2>Error</h2>
+            <p id="error-message"></p>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
